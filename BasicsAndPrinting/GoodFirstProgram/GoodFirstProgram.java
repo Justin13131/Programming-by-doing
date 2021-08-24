@@ -1,3 +1,4 @@
+// BasicsAndPrinting GoodFirstProgram 4pts Justin Hsu
 public class GoodFirstProgram
 {
 	public static void main( String[] args)
