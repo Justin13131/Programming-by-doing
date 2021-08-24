@@ -1,3 +1,4 @@
+// Variables MoreVariablesAndPrinting 7pts Justin Hsu
 public class MoreVariablesAndPrinting 
 {
     public static void main ( String[] args )
