@@ -4,3 +4,6 @@ I think I've learned a lot of thing in the first class. I wish this class could 
 This class I learnd public class void and main. Wow, I love this class. 
 
 I've learned the differences between int, String, and double from Brendan, it's so interesting!
+    String is used to define variables
+    Int is used to define negative and positive numbers 
+    Double is used to define positive numbers and do some other calculations. 
