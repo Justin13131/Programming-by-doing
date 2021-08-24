@@ -14,6 +14,7 @@ public class VariablesAndNames
     cars_driven = drivers;
     carpool_capacity = cars_driven * space_in_a_car;
     average_passengers_per_car = passengers/cars_driven;
+    //These are the variables
 
     System.out.println ("There are " + cars + " cars available.");
     System.out.println ("There are only " + drivers + " drivers avaliable.");
@@ -21,5 +22,6 @@ public class VariablesAndNames
     System.out.println ("We can transport "  + carpool_capacity + " people today.");
     System.out.println ("We have " + passengers + " to carpool today.");
     System.out.println ("We need to put about " + average_passengers_per_car + " in each car.");
+    //Messages and Text
   }
 }
