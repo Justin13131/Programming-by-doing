@@ -2,3 +2,5 @@ hi
 I think I've learned a lot of thing in the first class. I wish this class could be useful.
 
 This class I learnd public class void and main. Wow, I love this class. 
+
+I've learned the differences between int, String, and double from Brendan, it's so interesting!
