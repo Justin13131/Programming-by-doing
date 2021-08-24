@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Variables/VariablesAndNames",
-        "Variables/MoreVariablesAndPrinting"
+        "Variables/MoreVariablesAndPrinting",
+        "Variables/Using Variables"
     ]
 }
