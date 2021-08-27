@@ -4,7 +4,7 @@ public class WhatIf {
         int people = 20;
         int cats = 30;
         int dogs = 30;
-
+        //Variables
         if (people < cats) {
             System.out.println ("Too many cats! The world is doomed!");
         }

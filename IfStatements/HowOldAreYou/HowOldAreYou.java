@@ -1,6 +1,7 @@
 // IfStatements HowOldAreYou 25pts Justin Hsu
 
 import java.util.Scanner;
+//Scanner
 
 public class HowOldAreYou {
     
@@ -12,6 +13,7 @@ public class HowOldAreYou {
         int rentCar = 25;
         int age;
         String name;
+        //Variables
 
         System.out.println ("Hey, what's your name?");
         name = keyboard.next();

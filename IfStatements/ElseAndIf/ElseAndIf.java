@@ -6,6 +6,7 @@ public class ElseAndIf {
         int people = 30;
         int cars = 40;
         int buses = 15;
+        //Variables
 
         if ( people < cars ) {
             System.out.println ("We should take the cars.");

@@ -1,4 +1,5 @@
 import java.util.GregorianCalendar;
+//Calender 
 
 public class WeekdayName{
 	public static String weekday_name( int weekday ){
@@ -35,6 +36,7 @@ public class WeekdayName{
 		}
 		return result;
 	}
+	//Using else if statements to let it define weather which day fits the numbers
 
 
 	public static void main( String[] args ){

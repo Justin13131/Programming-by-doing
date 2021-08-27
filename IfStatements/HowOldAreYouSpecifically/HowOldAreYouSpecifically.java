@@ -11,6 +11,7 @@ public class HowOldAreYouSpecifically {
         int rentCar = 25;
         int age;
         String name;
+        // Variables 
 
         System.out.println ("Hey, what's your name? (Sorry I keep forgetting.)");
         name = keyboard.next();
@@ -32,6 +33,7 @@ public class HowOldAreYouSpecifically {
                 else {
                     System.out.println("You can pretty much do everythings, " + name + ".");
                 }
+                //If Statements
                 
             }
         }
