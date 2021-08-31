@@ -6,20 +6,22 @@ public class HowOldAreYouSpecifically {
     public static void main (String[] args){
         
         Scanner keyboard = new Scanner(System.in);
-        int drive = 16;
-        int vote = 18;
-        int rentCar = 25;
+        int drive = 16; //Age to drive
+        int vote = 18; //Age to vote
+        int rentCar = 25; //Age to rent car
         int age;
         String name;
         // Variables 
 
         System.out.println ("Hey, what's your name? (Sorry I keep forgetting.)");
         name = keyboard.next();
+        //Define Name
 
         System.out.println ("How old are you, " + name + "?");
         age = keyboard.nextInt();
+        //Define Age
 
-        if (age < drive) {
+        if (age < drive) { //If Function
             System.out.println ("You can't drive, " + name + ".");
         } 
         else{

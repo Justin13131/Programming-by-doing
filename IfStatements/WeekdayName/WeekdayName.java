@@ -55,7 +55,7 @@ public class WeekdayName{
 
 		GregorianCalendar cal = new GregorianCalendar();
 		int dow = cal.get(GregorianCalendar.DAY_OF_WEEK);
-
+		//Define calender varaible 
 		System.out.println( "\nToday is a " + weekday_name(dow) + "!" );
 	}
 

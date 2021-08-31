@@ -3,14 +3,15 @@ public class UsingVariables
 {
     public static void main ( String[] args )
     {
-        String room, e, cScience;
+        String room, e, cScience; //Variables
 
-        room = "113";
-        e = "2.71828";
-        cScience = "Computer Science";
+        room = "113"; //Rooms
+        e = "2.71828"; //E
+        cScience = "Computer Science"; //Computer Science
 
         System.out.println ("This is room #" + room + ".");
         System.out.println ("e is close to " + e + ".");
         System.out.println ("I am learning a bit about " + cScience + ".");
+        //Messages
     }
 }
