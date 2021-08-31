@@ -6,18 +6,18 @@ public class MoreVariablesAndPrinting
         String myName, myEyes, myTeeth, myHair;
         int myAge, myHeight, myWeight;
 
-        myName = "Justin Hsu";
-        myAge = 15; //Not a lie
-        myHeight = 182; //Centimeters 
-        myWeight = 72; //I don't know what's my weight so I just made it up 
+        myName = "Zed A. Shaw";
+        myAge = 35; //Not a lie
+        myHeight = 74; //Inches 
+        myWeight = 180; //lbs
         myEyes = "Brown and black";
         myTeeth = "White";
         myHair = "Brown";
 
         System.out.println( "Let's talk about " + myName + ".");
-        System.out.println("He's " + myHeight + " centimeters tall.");
-        System.out.println("He's " + myWeight + " kilograms heavy.");
-        System.out.println("Actually, he is not too heavy.");
+        System.out.println("He's " + myHeight + " inches tall.");
+        System.out.println("He's " + myWeight + " pounds heavy.");
+        System.out.println("Actually, that's not too heavy.");
         System.out.println("He's got " + myEyes + " eyes and " + myHair + " hair.");
         System.out.println("His teeth are usually " + myTeeth + " depending on the coffee.");
 
