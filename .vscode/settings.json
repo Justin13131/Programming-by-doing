@@ -2,6 +2,6 @@
     "java.project.sourcePaths": [
         "Variables/VariablesAndNames",
         "Variables/MoreVariablesAndPrinting",
-        "Variables/Using Variables"
+        "GUIs/AFramewithaPanelwithWritingonIt"
     ]
 }

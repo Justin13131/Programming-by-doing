@@ -1,4 +1,4 @@
-// GUIs AFrameWithAPanelwithWritingonIt
+// GUIs AFrameWithAPanelwithWritingonIt 20pts Justin Hsu\
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,10 +20,10 @@ class Frame613 extends JFrame{
 
         Panel613 panel = new Panel613();
         Container cp = getContentPane();
-        cd.add(panel);
+        cp.add(panel);
     }
 }
-class Panel1613 extends JPanel{
+class Panel613 extends JPanel{
     public void paintComponent (Graphics g) {
         super.paintComponent(g);
         g.drawString("Hi", 75,100);
