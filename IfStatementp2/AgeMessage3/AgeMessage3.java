@@ -18,15 +18,15 @@ public class AgeMessage3{
         System.out.println("");
         if (age < 16) {
             System.out.println("You can't drive.");
-        }
+        } //Age < 16
         else if (age >= 16 && age <= 17) {
             System.out.println("You can drive but not vote.");
-        }
+        } // Age between 16 and 17
         else if (age >=18 && age <= 24) {
             System.out.println("You can vote but not rent a car.");
-        }
+        } //Age between 18 and 24
         else if (age >= 25) {
             System.out.println("You can do pretty much everythings");
-        }
+        } //Above 25
     }
 }
