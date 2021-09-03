@@ -7,7 +7,7 @@ public class TwoQuestions {
 
         Scanner keyboard = new Scanner(System.in);
         //Scanner
-        String type, size, guess = "";
+        String type, size, guess;
         //Variables
 
         System.out.println("TWO QUESTIONS!");
