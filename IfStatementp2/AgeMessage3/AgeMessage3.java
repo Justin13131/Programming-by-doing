@@ -9,10 +9,10 @@ public class AgeMessage3{
         String name; //Variable : name
         int age; //Variable : age and it should be realized as an integer 
 
-        System.out.println("Your name: ");
+        System.out.print("Your name: ");
         name = keyboard.next(); //Scan keyboard input and define name
 
-        System.out.println("Your Age: ");
+        System.out.print("Your Age: ");
         age = keyboard.nextInt(); //Scan keyboard int input and define age
 
         System.out.println("");
