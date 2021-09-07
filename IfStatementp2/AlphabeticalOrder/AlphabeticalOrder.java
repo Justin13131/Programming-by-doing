@@ -21,7 +21,7 @@ public class AlphabeticalOrder {
 		}else if(lName.compareTo("Young")>=0){
 			System.out.println("Not going anywhere for a while? "+ lName + ".");
 		}
-		else{
+		else{ //Unavaliable input
 			System.out.println("error");
 		}
     }
