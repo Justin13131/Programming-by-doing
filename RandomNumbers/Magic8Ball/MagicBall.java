@@ -6,10 +6,10 @@ public class MagicBall {
     public static void main (String[] args) {
         Random r = new Random();
 
-        int choice = 1 + r.nextInt(15); 
+        int choice = 1 + r.nextInt(15); // 15 choices 
         String response = "";
 
-        if (choice == 1) {
+        if (choice == 1) { //RNG 
             response = "It is certain";
         }else if ( choice == 2) {
             response = "it is decidely so";
@@ -42,6 +42,6 @@ public class MagicBall {
         } else {
         response = "8-BALL ERROR!";
         }
-        System.out.println( "MAGIC 8-BALL SAYS: " + response );
+        System.out.println( "MAGIC 8-BALL SAYS: " + response ); //Output
     }
 }
