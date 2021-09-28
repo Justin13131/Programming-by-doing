@@ -7,7 +7,7 @@ public class Nim{
 		Scanner keyboard = new Scanner(System.in);String name1, name2;String name = "";
 		int number;
 		String guess = "";
-		int win;
+		int win = 1;
 		int A = 3;
 		int B = 4;
 		int C = 5;
@@ -95,13 +95,88 @@ public class Nim{
 				System.out.println("\t A: " + A + "\t B: " + B + "\t C: " + ( C - number ));
 				C = C - number;
 			}
+
+			if (A > 0 || B > 0 || C > 0 ) {
+				System.out.print(name2 + ", choose a pile: ");
+				guess = keyboard.next();
+
+				while (!guess.equals("A") && !guess.equals("B") && !guess.equals("C")){
+					System.out.println(name2 + "You can only choose A, B or C!");
+					System.out.print("Please Choose another one: ");
+					guess = keyboard.next();
+				}
+
+				//Anti Cheat
+				if (guess.equals("A")){
+					while ( A == 0 ) {
+						System.out.print( "Nice try, " + name2 + ". That pile is empty. Choose again: ");
+						guess = keyboard.next();
+					}
+				}
+				if(guess.equals("B")){
+					while ( B == 0 ) {
+						System.out.print( "Nice try, " + name2 + ". That pile is empty. Choose again: ");
+						guess = keyboard.next();
+					}
+				}
+				if(guess.equals("C")){
+					while ( C == 0 ) {
+						System.out.print( "Nice try, " + name2 + ". That pile is empty. Choose again: ");
+						guess = keyboard.next();
+					}
+				}
+				
+
+				//How many to remove
+				System.out.print("How many to remove from this pile " + guess + ": ");
+				number = keyboard.nextInt();
+
+				//Anti Cheat
+				while ( number <= 0 ) {
+					System.out.print("You must choose at least 1. How many? ");
+					number = keyboard.nextInt();
+				}
+				if (guess.equals("A")){
+					while ( A < number) {
+						System.out.print("Pile " + guess + " doesn't have that many. Try again: ");
+						number = keyboard.nextInt();
+					}
+				}
+				if(guess.equals("B")){
+					while ( B < number) {
+						System.out.print("Pile " + guess + " doesn't have that many. Try again: ");
+						number = keyboard.nextInt();
+					}
+				}
+				if(guess.equals("C")){
+					while ( C < number) {
+						System.out.print("Pile " + guess + " doesn't have that many. Try again: ");
+						number = keyboard.nextInt();
+					}
+				}
+				//Player 2 run
+				if ( guess.equalsIgnoreCase("A") ){
+					System.out.println("\t A: " + (A - number) + "\t B: " + B + "\t C: " + C);
+					A = A - number;
+				} else if (guess.equalsIgnoreCase("B")){
+					System.out.println("\t A: " + A + "\t B: " + ( B - number ) + "\t C: " + C);
+					B = B - number;
+				} else if ( guess.equalsIgnoreCase("C") ){
+					System.out.println("\t A: " + A + "\t B: " + B + "\t C: " + ( C - number ));
+					C = C - number;
+				}
+			}else {
+				System.out.println( name2 + ", there are no counters left, so you Win!");
+				win++;
+			}
 		}
-		
-		System.out.println( name2 + ", there are no counters left, so you Win!");
+		if (win > 1){
+
+		}else{
+			System.out.println( name2 + ", there are no counters left, so you Win!");
+		}
 
 	}
 
-	class anticheat {
 
-	}
 }
