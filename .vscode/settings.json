@@ -4,6 +4,7 @@
         "Variables/MoreVariablesAndPrinting",
         "GUIs/AFramewithaPanelwithWritingonIt",
         "ForLoop/CountingMachineRevisited",
-        "ForLoop/AddingValuesWithAForLoop"
+        "ForLoop/AddingValuesWithAForLoop",
+        "Projects/BlackJack"
     ]
 }
