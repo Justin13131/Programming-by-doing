@@ -10,7 +10,7 @@ public class BlackJack {
     
     public static void main(String[] args) {
         //Welcome
-        System.out.println("Welcome to Mitchell's blackjack program!");
+        // System.out.println("Welcome to Mitchell's blackjack program!");
         
         //Keyboard input
         Scanner keyboard = new Scanner(System.in);
@@ -36,74 +36,161 @@ public class BlackJack {
         //End the while
         int out = 0;
 
-        //Your Card Right Now
-        System.out.println("You get a " + card1 + " and a " + card2 + ".");
+        // //Your Card Right Now
+        // System.out.println("You get a " + card1 + " and a " + card2 + ".");
 
-        //if card 1 is ace
-        if ( card1 == 11) {
-            System.out.println("You get an ACE!");
-            System.out.println("Your total is now" + (card1 + card2) + "(Ace counted as 11 now).");
-            System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
+        // //if card 1 is ace
+        // if ( card1 == 11) {
+        //     System.out.println("You get an ACE!");
+        //     System.out.println("Your total is now" + (card1 + card2) + "(Ace counted as 11 now).");
+        //     System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
 
-            if(card1 + card2 <= 21) {
-                System.out.print("You want your Ace to be \"1\" or \"11\"?");
-                chooseace = keyboard.next();
-                    if (chooseace.equals("1")){
-                        card1 = 1;
-                        yournum = card3 + card2 + card1;
-                        System.out.println("Your total is now " + yournum + ".");
-                    } else if (chooseace.equals("11")){
-                        card1 = 11;
-                        yournum = card3 + card2 + card1;
-                        System.out.println("Your total is now " + yournum +".");
-                    } else {
-                        System.out.println("Please choose 1 or 11.");
-                    }
-            }
-        }
-        //if card 2 is ace
-        if ( card2 == 11) {
-            yournum = card3 + card2 + card1;
-            System.out.println("You get an ACE!");
-            System.out.println("Your total is now" + yournum + "(Ace counted as 11 now).");
-            System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
+        //     if(card1 + card2 <= 21) {
+        //         System.out.print("You want your Ace to be \"1\" or \"11\"?");
+        //         chooseace = keyboard.next();
+        //             if (chooseace.equals("1")){
+        //                 card1 = 1;
+        //                 yournum = card3 + card2 + card1;
+        //                 System.out.println("Your total is now " + yournum + ".");
+        //             } else if (chooseace.equals("11")){
+        //                 card1 = 11;
+        //                 yournum = card3 + card2 + card1;
+        //                 System.out.println("Your total is now " + yournum +".");
+        //             } else {
+        //                 System.out.println("Please choose 1 or 11.");
+        //             }
+        //     }
+        // }
+        // //if card 2 is ace
+        // if ( card2 == 11) {
+        //     yournum = card3 + card2 + card1;
+        //     System.out.println("You get an ACE!");
+        //     System.out.println("Your total is now" + yournum + "(Ace counted as 11 now).");
+        //     System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
 
 
-            if(card1 + card2 <= 21) {
-                System.out.print("You want your Ace to be \"1\" or \"11\"?");
-                chooseace = keyboard.next();
-                    if (chooseace.equals("1")){
-                        card2 = 1;
-                        yournum = card3 + card2 + card1;
-                        System.out.println("Your total is now " + yournum + ".");
-                    } else if (chooseace.equals("11")){
-                        card2 = 11;
-                        yournum = card3 + card2 + card1;
-                        System.out.println("Your total is now " + yournum + ".");
-                    } else {
-                        System.out.println("Please choose 1 or 11.");
-                    }
-            }else if (card1 == 11) {
-                card2 = 1;
-                yournum = card3 + card2 + card1;
-                System.out.println("Sadly, you already got over 11, if your ace is 11 now, you lose instantly. Your ace is counted as one now.");
-                System.out.println("Your total is now " + yournum + ".");
-            }
-        }
-        yournum = card3 + card2 + card1;
-        System.out.println("Your total is " + yournum + ".");
+        //     if(card1 + card2 <= 21) {
+        //         System.out.print("You want your Ace to be \"1\" or \"11\"?");
+        //         chooseace = keyboard.next();
+        //             if (chooseace.equals("1")){
+        //                 card2 = 1;
+        //                 yournum = card3 + card2 + card1;
+        //                 System.out.println("Your total is now " + yournum + ".");
+        //             } else if (chooseace.equals("11")){
+        //                 card2 = 11;
+        //                 yournum = card3 + card2 + card1;
+        //                 System.out.println("Your total is now " + yournum + ".");
+        //             } else {
+        //                 System.out.println("Please choose 1 or 11.");
+        //             }
+        //     }else if (card1 == 11) {
+        //         card2 = 1;
+        //         yournum = card3 + card2 + card1;
+        //         System.out.println("Sadly, you already got over 11, if your ace is 11 now, you lose instantly. Your ace is counted as one now.");
+        //         System.out.println("Your total is now " + yournum + ".");
+        //     }
+        // }
+        // yournum = card3 + card2 + card1;
+        //System.out.println("Your total is " + yournum + ".");
 
         //Dealer cards
         int dcard1 = 2 + r.nextInt(10);
         int dcard2 = 2 + r.nextInt(10);
 
-        //Dealer card hidden
-        System.out.println("The dealer has a " + dcard1 + " showing, and a hidden card.");
-        System.out.println("His total is hitten, too.");
+        // //Dealer card hidden
+        // System.out.println("The dealer has a " + dcard1 + " showing, and a hidden card.");
+        // System.out.println("His total is hitten, too.");
 
         //Setting up yournum
         yournum = card1 + card2;
-        //Player's turn
+
+        //Keep playing or no
+        String yn = "";
+
+        //Money
+        int money = 500;
+        int moneybet = 0;
+        do {
+            yournum = 0;
+            dealernum = 0;
+            out = 0;
+            //Money now
+            System.out.println("You now have " + money + ".");
+            System.out.println("");
+
+            System.out.println("How much do you want to bet? min 5, max 100.");
+            moneybet = keyboard.nextInt();
+
+            //Money spent
+            money = money - moneybet;
+            //Earn or lost value
+            moneybet = moneybet*2;
+            //Your Card Right Now
+            System.out.println("You get a " + card1 + " and a " + card2 + ".");
+
+            //if card 1 is ace
+            if ( card1 == 11) {
+                System.out.println("You get an ACE!");
+                System.out.println("Your total is now" + (card1 + card2) + "(Ace counted as 11 now).");
+                System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
+
+                if(card1 + card2 <= 21) {
+                    System.out.print("You want your Ace to be \"1\" or \"11\"?");
+                    chooseace = keyboard.next();
+                        if (chooseace.equals("1")){
+                            card1 = 1;
+                            yournum = card3 + card2 + card1;
+                            System.out.println("Your total is now " + yournum + ".");
+                        } else if (chooseace.equals("11")){
+                            card1 = 11;
+                            yournum = card3 + card2 + card1;
+                            System.out.println("Your total is now " + yournum +".");
+                        } else {
+                            System.out.println("Please choose 1 or 11.");
+                        }
+                }
+            }
+            //if card 2 is ace
+            if ( card2 == 11) {
+                yournum = card3 + card2 + card1;
+                System.out.println("You get an ACE!");
+                System.out.println("Your total is now" + yournum + "(Ace counted as 11 now).");
+                System.out.println("Don't worry if you get over 21 now, you can still choose if your ace is 1 or 11!");
+
+
+                if(card1 + card2 <= 21) {
+                    System.out.print("You want your Ace to be \"1\" or \"11\"?");
+                    chooseace = keyboard.next();
+                        if (chooseace.equals("1")){
+                            card2 = 1;
+                            yournum = card3 + card2 + card1;
+                            System.out.println("Your total is now " + yournum + ".");
+                        } else if (chooseace.equals("11")){
+                            card2 = 11;
+                            yournum = card3 + card2 + card1;
+                            System.out.println("Your total is now " + yournum + ".");
+                        } else {
+                            System.out.println("Please choose 1 or 11.");
+                        }
+                }else if (card1 == 11) {
+                    card2 = 1;
+                    yournum = card3 + card2 + card1;
+                    System.out.println("Sadly, you already got over 11, if your ace is 11 now, you lose instantly. Your ace is counted as one now.");
+                    System.out.println("Your total is now " + yournum + ".");
+                }
+            }
+            yournum = card3 + card2 + card1;
+            if (card1 != 11){
+                if (card2 != 11) {
+                    System.out.println("Your total is now " + yournum + ".");
+                }
+            }
+
+                        //Dealer card hidden
+                    System.out.println("The dealer has a " + dcard1 + " showing, and a hidden card.");
+                    System.out.println("His total is hitten, too.");
+
+                    //Player's turn
         if (card1 + card2 == 21){
             System.out.println("You can only stay because you already got a BLACK JACK!");
         } else {
@@ -151,6 +238,7 @@ public class BlackJack {
                                         if (yournum > 21) {
                                             System.out.println("Your total is more than 21! ");
                                             System.out.println("The Dealer Wins!");
+                                            System.out.println("You now have " + money + ".");
                                             out = out + 100;
                                         }
                                     //Choose 11
@@ -170,6 +258,7 @@ public class BlackJack {
                             if (yournum > 21) {
                                 System.out.println("Your total is more than 21! ");
                                 System.out.println("The Dealer Wins!");
+                                System.out.println("You now have " + money + ".");
                                 out = out + 100;
                             }
                         }
@@ -192,6 +281,7 @@ public class BlackJack {
                 if (yournum > 21) {
                     System.out.println("You got over 21!");
                     System.out.println("The dealer wins!");
+                    System.out.println("You now have " + money + ".");
                 }
             } while (yournum + out < 21);
         }
@@ -213,10 +303,12 @@ public class BlackJack {
                         System.out.println("His total is now  "+ dealernum + ".");
                     } 
                 }
-                System.out.println("His total is now  "+ dealernum + ".");
                 if (dealernum >= 22) {
                     System.out.println("The dealer got more than 21! ");
                     System.out.println("You Win! ");
+                    money = money + moneybet;
+                    System.out.println("You now have " + money + ".");
+
                 }
                 System.out.println("His total is "+ dealernum + ".");
 
@@ -231,19 +323,30 @@ public class BlackJack {
                         System.out.println("Dealer's total: " + dealernum + ".");
                         System.out.println("Your total: " + yournum + ".");
                         System.out.println("The Dealer Wins");
+                        System.out.println("You now have " + money + ".");
+
                     } else if (yournum > dealernum) {
                         System.out.println("Dealer's total: " + dealernum + ".");
                         System.out.println("Your total: " + yournum + ".");
                         System.out.println("You Win!");
+                        money = money + moneybet;
+                        System.out.println("You now have " + money + ".");
+
                     }else if (yournum == dealernum) {
                         System.out.println("Dealer's total: " + dealernum + ".");
                         System.out.println("Your total: " + yournum + ".");
                         System.out.println("It's a tie, so the Dealer Wins!");
+                        System.out.println("You now have " + money + ".");
+
                     }
                 }
     
             }
 
         }
+        System.out.println("Play again? \"y\" or \"n\"");
+        yn = keyboard.next();
+        } while (yn.equals("y") && money > 0);
+
     }
 }  
