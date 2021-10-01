@@ -1,5 +1,5 @@
 //Projects BlackJack 200pts Justin Hsu
-//BlackJack with Ace
+//BlackJack with Ace and betting system
 //Import util library 
 import java.util.*;
 
