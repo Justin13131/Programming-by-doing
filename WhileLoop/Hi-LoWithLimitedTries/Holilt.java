@@ -1,3 +1,6 @@
+//WhileLoop Hi-LoWithLimitedTries 55pts Justin Hsu
+
+import java.util.*;
 public class Holilt {
         
     public static void main( String[] args ) {
@@ -15,7 +18,7 @@ public class Holilt {
         
         while ( guess != number && tries < 7 ) {
             if ( guess > number ) {
-                System.out.println( "Sorry, your guess is too high." );
+                System.out.println( "Sorry, that guess is too high." );
             }
             
             if ( guess < number ) {
