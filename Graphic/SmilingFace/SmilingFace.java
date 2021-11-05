@@ -6,28 +6,33 @@ public class SmilingFace extends Canvas
 {
     public void paint( Graphics g )
     {
+        g.drawRect(50, 50, 900, 650);
         drawSmilingFace(g,100,100);
+        drawSmilingFace(g,500,100);
+
+        drawSmilingFace(g,100,400);
+
+        drawSmilingFace(g,500,400);
+
         // etc
     }
 
     public void drawSmilingFace( Graphics g, int x, int y )
     {
         // Draws a smiling face on the screen, where the point (x,y) is
+        // draw circle for the head
         g.setColor(Color.yellow);
-        g.fillOval(160,160,160,160);
+        g.fillOval(x+110,y+130,160,160);
         g.setColor(Color.black);
-        g.drawArc(190,200,100,100,-180,180);
-        g.fillOval(200,200,10,20);
-        g.fillOval(270,200,10,20);
+        g.drawArc(x+140,y+170,100,100,-180,180);
+        // draw eyes
+
+        g.fillOval(x+150,y+170,10,20);
+        g.fillOval(x+220,y+170,10,20);
 
 
         //  the upper-left corner of a box containing the face.
-        g.drawRect(x+50, y+50, 180, 180);
 
-
-        // draw circle for the head
-
-        // draw eyes
 
         // draw mouth
     }
