@@ -1,10 +1,3 @@
 {
-    "java.project.sourcePaths": [
-        "Variables/VariablesAndNames",
-        "Variables/MoreVariablesAndPrinting",
-        "GUIs/AFramewithaPanelwithWritingonIt",
-        "ForLoop/CountingMachineRevisited",
-        "ForLoop/AddingValuesWithAForLoop",
-        "Projects/BlackJack"
-    ]
+    "java.project.sourcePaths": []
 }
