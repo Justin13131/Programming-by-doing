@@ -1,3 +1,4 @@
+//Arrays HangMan 200pts Justin Hsu
 import java.util.Scanner;
 
 public class HangMan {
