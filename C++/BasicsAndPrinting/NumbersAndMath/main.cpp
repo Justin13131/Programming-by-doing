@@ -32,5 +32,5 @@ int main() {
     cout << "How about some more.\n";
     cout << "Is it greater or equal? " << boolalpha << ( 5 >= -2 ) << "\n";
     cout << "Is it less or equal? " << boolalpha << ( 5 <= -2 );
-
+    return 0;
 }

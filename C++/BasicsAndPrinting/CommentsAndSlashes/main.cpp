@@ -9,4 +9,5 @@ int main(){
     cout << "I could have coude like this";
 
     cout << "This will run";
+    return 0;
 }

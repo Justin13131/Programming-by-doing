@@ -16,5 +16,5 @@ int main(){
     cout << "Your BMI is: " << BMI << endl << endl;
 
     system("pause"); 
-
+    return 0;
 }
