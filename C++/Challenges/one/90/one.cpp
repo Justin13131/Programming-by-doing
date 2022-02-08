@@ -1,4 +1,4 @@
-//Challenges Challenge one 100pts Justin Hsu
+//Challenges Challenge one 90pts Justin Hsu
 #include <iostream>
 using namespace std;
  
