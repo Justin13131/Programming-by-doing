@@ -1,4 +1,4 @@
-//Challenges Challenge one 110pts Justin Hsu
+//Challenges Challenge one 100pts Justin Hsu
 #include <iostream>
 using namespace std;
  
@@ -13,14 +13,12 @@ int calculate_sum(int a, int B, int N){
  
 //run
 int main(){
-    int a = 0, N = 0, B = 0;
+    int a = 0, N = 100, B = 0;
     cout << "Input A: ";
     cin >> a;
     cout << endl << "Input B: ";
     cin >> B;
 
-    cout << endl << "Input Given Number: ";
-    cin >> N;
     cout << "Sum of multiples of "
          << a << " and " << B << " up to " << N << " = "
          << calculate_sum(a, B, N) << endl;
