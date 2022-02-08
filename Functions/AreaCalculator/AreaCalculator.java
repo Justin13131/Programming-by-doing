@@ -52,7 +52,7 @@ public class AreaCalculator {
         height = keyboard.nextInt();
 
         //Area calculation
-        area = base + height;
+        area = base * height;
         area = area/2;
         //Output
         System.out.println("The area is: " + area + ".");
