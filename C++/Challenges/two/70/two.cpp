@@ -1,29 +1,55 @@
-//Challenges Challenge two 100pts Justin Hsu
-#include <iostream>
+#include <iostream>  
 #include <math.h>
 #include <stdio.h>
+
 using namespace std;
-unsigned long long calculate_sum(int M, int L){
-    unsigned long long result = 0;
-    unsigned long long modulo = 10000000000;
  
-    for (int i = M; i <= L; i++) {
-        unsigned long long temp = i;
+int* GetBigInteger(string str);
+
+int main() {
+    cout<<"test";
+    string str = "0";
+
+    for (int i = 1; i <= 1000; i++) {
+        string str1 = "0";
         for (int j = 1; j < i; j++) {
-            temp *= i;
-            temp %= modulo;
+            str1 = i;
         }
-        result += temp;
-        result %= modulo;
+        str += str1;
     }
-    return result; 
-}
-int main(){
-    int M = 0, L = 0;
-    cout  << "Input Minimun Given Number: ";
-    cin >> M;
-    cout << endl << "Input Largest Given Number: ";
-    cin >> L;
-    cout << "Sum of the n^n from " << M << " to " << L << " = " << calculate_sum(M, L) << endl;
+    int* arr = GetBigInteger(str);
+    for (int i = 0; i < str.size(); i++) {
+        cout <<arr[i];
+    }
     return 0;
+}
+
+// array consisting integers individually
+int* GetBigInteger(string str)
+{
+    int x = str.size(), a = 0;
+ 
+    // Create an array to store the big
+    // integer into it.
+ 
+    // Make the array size same as the
+    // size of string str
+    int* arr = new int[str.size()];
+ 
+    // Loop to extract string elements
+    // into the array one by one
+    while (a != x) {
+ 
+        // Subtracting '0' to convert
+        // each character into digit
+ 
+        // str[a] - '0'
+        // = ASCII(str[a]) - ASCII('0')
+        // = ASCII(str[a] - 48
+        arr[a] = str[a] - '0';
+        a++;
+    }
+ 
+    // Return the reference of the array
+    return arr;
 }
