@@ -4,9 +4,9 @@
 #include <string>  
 
 using namespace std;
+int result = 0;
 
 int main() {
-    int result = 0;
  
     for (int i = 2; i < 355000; i++) { 
         int sumOfPowers = 0; int number = i; 

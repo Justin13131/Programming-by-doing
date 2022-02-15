@@ -4,9 +4,9 @@
 #include <string>  
 
 using namespace std;
+int result = 0, x;
 
 int main() {
-    int result = 0, x;
     cout << "Power: ";
     cin >> x;
     for (int i = 2; i < 355000; i++) { 

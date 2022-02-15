@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 
+
 using namespace std;
  
 int* GetBigInteger(string str);
