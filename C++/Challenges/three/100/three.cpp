@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <math.h>
+#include <stdio.h>
 using namespace std;
 
-long input, result, sum, digit, temp = 0;
+int input, result, sum, digit, temp = 0;
 
 int main (){
     cout << "power: ";
@@ -10,7 +12,7 @@ int main (){
 
 
 
-    for (long i = 2; i < 35500000; i++){
+    for (long i = 2; i < 17000000; i++){
         sum = 0;
         long num = 1;
 
@@ -19,10 +21,10 @@ int main (){
             num *= 10;
             temp = digit;
 
-            for(long j = 1; j < input; j++){
+            for(int j = 1; j < input; j++){
                 temp = temp*digit;
             }
-
+           
             sum = sum + temp;
         }
 
@@ -31,7 +33,6 @@ int main (){
         if (sum == i){
             result += i;
         }
-
     }
     cout << result;
 
