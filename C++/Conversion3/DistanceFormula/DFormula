@@ -1,0 +1,25 @@
+//Distance Formula
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+using namespace std;
+int Calculator(int x1, int y1, int x2, int y2);
+int main() {
+    cout << Calculator(3, 3, 3, 3);
+
+    return 0;
+    
+}
+
+int Calculator(int x1, int y1, int x2, int y2){
+    cout << "Input x1: ";
+    cin >> x1;
+    cout << endl << "Input x2: "; 
+    cin >> x2;
+    cout << endl << "Input y1: ";
+    cin >> y1; 
+    cout << endl << "Input y2: ";
+    cin >> y2; 
+    return sqrt(pow(x2 - x1, 2) +
+                pow(y2 - y1, 2) * 1.0);
+}
