@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
-#include <math.h>
+#include <math.h>   
 #include <stdio.h>
 #include <cmath>
 
