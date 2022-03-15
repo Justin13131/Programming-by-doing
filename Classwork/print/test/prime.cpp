@@ -1,57 +1,78 @@
-#include <iostream>
 #include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-
-long long p;
-long long inn, inm, ans = 0;
-
 vector<long long> vec = {};
 
-
-int ifPrime(int n) {
-   // p = inm;
-    for(int i=0;i<n;i++){
-        if (n % i == 0) {
-            return 0;
-        }
-        return 1;
+bool ifPrime(int n){
+    if (n <= 1){
+        return false;
     }
-
-
+       
+    if (n <= 3){
+        return true;
+    }
+    if (n % 2 == 0 || n % 3 == 0){
+        return false;
+    }
+    for (int i = 5; i * i <= n; i = i + 6){
+        if (n % i == 0 || n % (i + 2) == 0){
+            return false;
+        }
+    }
+    return true;
 }
-void primeSize(){
-    p = inm;
-    long long i = inn;
-    for(int i =0; i < 10; i++){
-        if (ifPrime(i) == 1) {
+
+void prime(long long n, long long i){
+    for (i; i <= n; i++) {
+        if (ifPrime(i)){
+            // cout << i << " ";
             vec.push_back(i);
         }
     }
 }
 
 int main() {
-    cout << endl << "Enter Min: ";
-    cin >> inn;
+    long long n;
 
-    cout << "Enter Max: ";
-    cin >> inm;
+    long long min;
+    long long ans;
+    vector<int> oans = {};
+    cout << "Max: ";
+    cin >> n;
 
-    cout << endl << "Consectutive Prime: ";
+    cout << endl << "Min: ";
+    cin >> min;
 
-    cout<<"size : = "<<vec.size()<<endl;
+    cout << "\nThe Prime Numbers are : ";
+    prime(n, min);
 
     ans += vec.at(0);
-    while(ifPrime(ans) == 1) {
-        for(int i = 1; i < vec.size(); i++) {
+    long i = 1;
+    if (vec.size()!=0){
+        for(i; i < vec.size(); i++) {
+            cout << vec.at(i) << " ";
             if (ifPrime(ans += vec.at(i))==1){
-                ans += vec.at(i);
+                ans = ans + vec.at(i);            
+            }else{
             }
-            
+                
+        }
+        oans.push_back(ans);
+    }
+    long long rans;
+    if (oans.at(1) > oans.at(2)){
+            rans = oans.at(1);
+    }else{
+        rans = oans.at(2);
+    }
+    for(int i = 2; i < oans.size() - 2; i++){
+        if (rans < oans.at(i+1)){
+            rans = oans.at(i);
+        }else{
+
         }
     }
-    cout <<endl<< ans;
     
-
-    return 0;
+    cout <<endl << rans;
+    cout << endl;
 }
-
