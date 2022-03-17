@@ -31,40 +31,25 @@ void prime(long long n, long long i){
     }
 }
 void prime2(long long n){
-    int k = 1;
-    int c = 0;
-    long ans = 0;
-    vector<long> ans2 = {};
-    long anso = 0;
-    while (k=1){
-
-        for(int i = 0; i < vec.size()-c; i++){
-            ans += vec.at(i);
-            for(int z = 0; z < vec.size(); z++){
-
-            }
-        }
-        for(int z = vec.size(); z = 0; z--){
-            anso += vec.at(z);
-        }
-        
-        if(ifPrime(anso) == true){
-            ans2.push_back(anso);
-        }
-        if(ifPrime(ans) == true){
-            if(ans < n){
-                // cout << endl << "Answer: " << ans;
-                // cout << endl << "Ends at: " << vec.at(num-1);
-                ans2.push_back(ans);
-            }else{
-                c++;
-            }
-        }
-        if(ifPrime(ans) == false){
-            c++;
-        }
-        ans = 0;
-    }
+	int sum = vec[0];
+	long num = 0;
+    long ans = 0; 
+    int length=vec.size();
+    int count = 0;
+    int allcount = 0;
+	for(int j = 0; j <= vec.size(); j++) {
+		for(int i = j; i < vec.size(); i++) {
+			num += vec.at(i);
+			count++;
+			if(ifPrime(num) == 1 && num <= n && count >= allcount) {
+				ans = num;
+				allcount = count;
+			}
+		}
+		count = 0;
+		num = 0;
+	}
+    cout << endl << ans;
 }
 int main() {
     long long n;
