@@ -54,9 +54,7 @@ void Pow(int i,vector<int> & pow_ans){
   {
     pow_ans.push_back(1);
   }
-
 }
-
 void Multi(vector<int> na, vector<int>nb,vector<int>&pow_ans){
 
   for(int k=0;k<na.size();++k)
@@ -71,7 +69,6 @@ void Multi(vector<int> na, vector<int>nb,vector<int>&pow_ans){
               {
                 pow_ans[k+l] += na[k] * nb[l];
               }
-              
                 if(pow_ans[k+l]>=10){
                   if(pow_ans.size()<=(k+l+1))
                   {
