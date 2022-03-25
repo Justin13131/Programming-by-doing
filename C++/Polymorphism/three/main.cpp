@@ -62,7 +62,6 @@ int main(){
     cout << endl << squares[1].getType() << ", " << squares[1].getArea() << ", #2";
     cout << endl << squares[2].getType() << ", " << squares[2].getArea() << ", #3";
     cout << endl << "Array Shapes: ";
-
     cout << endl << shapes[0].getType() << ", " << shapes[0].getArea() << ", #4";
     cout << endl << shapes[1].getType() << ", " << shapes[1].getArea() << ", #5";
     cout << endl << shapes[2].getType() << ", " << shapes[2].getArea() << ", #6 ";
