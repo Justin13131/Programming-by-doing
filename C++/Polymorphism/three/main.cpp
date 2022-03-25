@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 class Quadrilateral{
 private:
@@ -51,19 +50,26 @@ int main(){
         Quadrilateral(6, 5),
         Quadrilateral(3, 6, 5)
     };
-    Quadrilateral squares[5];
-    int k = 0;
+    Quadrilateral squares[3];
+    int i5;
     for(int i = 0; i<3;i++){
-       squares[i]=Quadrilateral(i-k);
-       k++;
-    };
-
-    for(int i = 0; i<5;i++){
-       squares[i]=Quadrilateral(i+5);
+        i5 = i + 5;
+       squares[i]=Quadrilateral(i5);
     };
     squares[1].changeShape(6,6);
-    cout << "Shapes: " << shapes[1].getArea()+shapes[2].getArea()+shapes[3].getArea();
-    cout << endl << "Squares: " << squares[1].getArea() +  squares[2].getArea() +  squares[3].getArea() +  squares[4].getArea() +  squares[5].getArea();
+    cout << endl << "Array Squares: ";
+    cout << endl << squares[0].getType() << ", " << squares[0].getArea() << ", #1";
+    cout << endl << squares[1].getType() << ", " << squares[1].getArea() << ", #2";
+    cout << endl << squares[2].getType() << ", " << squares[2].getArea() << ", #3";
+    cout << endl << "Array Shapes: ";
 
+    cout << endl << shapes[0].getType() << ", " << shapes[0].getArea() << ", #4";
+    cout << endl << shapes[1].getType() << ", " << shapes[1].getArea() << ", #5";
+    cout << endl << shapes[2].getType() << ", " << shapes[2].getArea() << ", #6 ";
+
+    cout << endl <<  "Array Shapes total: " << shapes[0].getArea()+shapes[1].getArea()+shapes[2].getArea();
+    cout << endl << "Array Squares total: " << squares[0].getArea() +  squares[1].getArea() +  squares[2].getArea();
+    int s = shapes[0].getArea()+shapes[1].getArea()+shapes[2].getArea() + squares[0].getArea() +  squares[1].getArea() +  squares[2].getArea();
+    cout << endl << "Total: " << s;
     return 0;
 }
