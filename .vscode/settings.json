@@ -50,6 +50,10 @@
         "ctime": "cpp",
         "bitset": "cpp",
         "regex": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "valarray": "cpp"
     }
 }
