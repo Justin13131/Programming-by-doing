@@ -1,1 +1,2 @@
-    // sort(vec.begin(), vec.end());
+ // mat[count][i] = hori.at(pri);
+                    // pri++;

@@ -14,47 +14,82 @@ int main(){
     cin >> v;
     char c;
     int r;
+    int ans = v*h;
     vector <char> hori = {};
-    for(int i = 0; i < v; i++){
-        for(int j = 0; j < h; j++){
-            r = rand() % 26;   
-            c = 'a' + r;
-            hori.push_back(c);
-        }
+    for(int i = 0; i < ans; i++){
+        r = rand() % 26;   
+        c = 'a' + r;
+        hori.push_back(c);
     }
-    int num = 0;
-    char matrix[v][h] = {};
-    for(int i = 0; i < v; i++){
-        for(int j = 0; j < h; j++){
-            matrix[i][j] = hori.at(num);
-            num++;
-        }
-    }
-
+    int pri = 0;
     cout << "Before: " << endl;
-     for(int i = 0; i < v; i++){
-        for(int j = 0; j < h; j++){
-            cout << matrix[i][j] << " ";
-        }
-        cout<<endl << "";
-    }    
-    char matrix2[v][h] = {};
-    sort(hori.begin(), hori.end());
     for(int i = 0; i < v; i++){
         for(int j = 0; j < h; j++){
-            matrix2[i][j] = hori.at(num);
-            num++;
+            cout << hori.at(pri) << " ";
+            pri++;
         }
+        cout << endl;
     }
+    sort(hori.begin(), hori.end());
+
+    pri = 0;
+    cout << endl;
+    char mat[v][h];
+    cout << "sort" << endl;
+    for(int i = 0; i < ans; i++){
+        cout << hori.at(pri) << " ";
+        pri++;
+    }
+    cout << endl;
+    pri = 0;
+    int count = v;
+    int size = hori.size();
+    int i;
+    int ch;
     cout << "After: " << endl;
-     for(int i = 0; i < v; i++){
-        for(int j = 0; j < h; j++){
-            cout << matrix2[i][j] << " ";
+    for(i = 0; i < h+1; i++){
+        for(int j = 0; j < v; j++){
+            if(size == 0){
+                for(int k = 0; k <= ch; k++){
+                    mat[j][i] = hori.at(pri);
+                }
+                break;
+            }else{
+                mat[j][i] = hori.at(pri);
+                pri++; 
+                size--;
+            }
         }
-        cout<<endl << "";
-    } 
+        pri--;
+        ch++;
+        i++;
+        for(int j = 0; j <= v; j++){
+            if(size == 0){
+                for(int k = 0; k <= ch; k++){
+                    mat[count][i] = hori.at(pri);
+                    
+                }
+                break;
+            }else{
+                mat[count][i] = hori.at(pri);
+                pri++;
+                count--; 
+                size--;
+            }
+            
+        }
+        count = v;
+    }
 
-
+    
+    for(int i = 0; i < v; i++){
+        for(int j = 0; j < h; j++){
+            cout << mat[i][j] << " ";
+        }
+        cout<<endl;
+    }
+    
+   
 	cout << endl;
 
 	return 0;
