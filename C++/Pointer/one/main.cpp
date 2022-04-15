@@ -12,7 +12,7 @@ void sayHello(string name){
 void sayHi(string &name){
     cout<<"Hi "<<name;
 }
-//Compare 5 and 1, print larger one
+//Compare 5 and 1, print larger one(int *x and int *y points to a and b)
 int * larger(int *x, int *y){
     if(*x>*y) return x;
     else return y;
@@ -25,7 +25,7 @@ int main()
     //Print" Hello" & string name -> (World)
     sayHello(name);
     cout<<endl;
-    //make pName "World"
+    //make pName "World" (*pName points to &name)
     string *pName = &name;
     //Print "Hi" & string pName -> (World)
     sayHi(*pName);
@@ -36,5 +36,7 @@ int main()
     int *pNum = larger(&a,&b);
     //cout larger number( 1 or 5) and "is larger"
     cout<<"\n"<<*pNum<<" is larger"<<endl;
+    
     return 0;
+    
 }
