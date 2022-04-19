@@ -8,11 +8,11 @@ using namespace std;
 void sayHello(string name){
     cout<<"Hello "<<name;
 }
-//Print "Hi" & string Pname -> (World)
+//Print "Hi" & string Pname -> (World) pName points to te address of name so &name here
 void sayHi(string &name){
     cout<<"Hi "<<name;
 }
-//Compare 5 and 1, print larger one(int *x and int *y points to a and b)
+//Compare 5 and 1, print larger one(int *x and int *y points to address a and address b)
 int * larger(int *x, int *y){
     if(*x>*y) return x;
     else return y;
@@ -27,7 +27,7 @@ int main()
     cout<<endl;
     //make pName "World" (*pName points to &name)
     string *pName = &name;
-    //Print "Hi" & string pName -> (World)
+    //Print "Hi" & string *pName -> (World) pName points to the address of name
     sayHi(*pName);
     //Set a5 b1
     int a = 5;
