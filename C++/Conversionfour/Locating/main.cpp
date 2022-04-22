@@ -34,7 +34,5 @@ int main(){
         }
     }
     int *pcount = &count;
-    cout << "Location: slot " << *pcount;
-
-    
+    cout << "Location: slot " << *pcount;   
 }
