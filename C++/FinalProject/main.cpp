@@ -1,6 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include <ctime>
+#include <string>
+#include <iomanip>
+#include <stdio.h>
 using namespace std;
 
 class Skill{
@@ -16,14 +19,22 @@ class Skill{
             uses = skill_uses;
             damage = skill_damage;
             type = skill_type;
+        } 
+        int getDmg(){
+            return damage;
         }
-
+        int getUses(){
+            return uses;
+        }
+        string getName(){
+            return name;
+        }
         string getType(){
             return type;
         }
 
-        int getDamage(){
-
+        void useSkill(){
+            uses--;
         }
 
         void printSkill(){
@@ -32,6 +43,10 @@ class Skill{
         void opponentSkill() {
             cout << "The opponent uses " << name << ", you take " << damage << " damage.";
         }
+        // void printSkill(){
+        //     cout << "Name: " << name << endl;
+        //     cout <<" Uses: " << uses << "\t Damage:" << damage << "\t Type: " << type<<endl;
+        // }
 
 };
 
@@ -44,13 +59,54 @@ class Pokemon{
         Skill skill_moves[4];
     public: 
         Pokemon();
-        Pokemon(int chp, int mhp, double atk, string p_type, Skill moves[4]){
-            currenthealth = chp;
-            maxhealth = mhp;
-            attack = atk;
-            type = p_type;
-            skill_moves[4] = moves[4];
+        Pokemon(int h, int a, string t){
+        maxhealth = h;
+        currenthealth = h;
+        attack = a;
+        type = t;
+    }
+    void printMove(){ //print out moves
+        cout << "\n1. " << skill_moves[0].getName() << " " << skill_moves[0].getUses() << " , " << skill_moves[0].getDmg() << " , " << skill_moves[0].getType();
+        cout << "\n2. " << skill_moves[1].getName() << " " << skill_moves[1].getUses() << " , " << skill_moves[1].getDmg() << " , " << skill_moves[1].getType();
+        cout << "\n3. " << skill_moves[2].getName() << " " << skill_moves[2].getUses() << " , " << skill_moves[2].getDmg() << " , " << skill_moves[2].getType();
+        cout << "\n4. " << skill_moves[3].getName() << " " << skill_moves[3].getUses() << " , " << skill_moves[3].getDmg() << " , " << skill_moves[3].getType();
+    }
+    string getType(){
+        return type;
+    }
+
+    int getCHealth(){
+        return currenthealth;
+    }
+
+    int getHealth(){
+        return maxhealth;
+    }
+
+    void printPokemon(){
+        cout << "Health " << currenthealth << "/" << maxhealth << "\tType " << type;
+    }
+
+    void setMove(){ //preset the moves
+        for(int i=0;i<4;i++){
+            skill_moves[i] = Skill ("null", 1, 1, "null");
         }
+    }
+
+    void addMove(Skill x){ //change moves
+        if(skill_moves[0].getName() == skill_moves[3].getName()){
+            skill_moves[0] = x;
+        }else if(skill_moves[1].getName() == skill_moves[2].getName()){
+            skill_moves[1] = x;
+        }else if(skill_moves[2].getName() == skill_moves[3].getName()){
+            skill_moves[2] = x;
+        }else if(skill_moves[3].getName() != skill_moves[2].getName()){
+            skill_moves[3] = x;
+        }
+
+    }
+
+
 };
 int typecomparison(string type, string type2) {
     /* Fire > Grass x1.5
@@ -128,6 +184,7 @@ int typecomparison(string type, string type2) {
 
 int main(){
     srand(time(NULL));
+    int moveR;
     Skill skills[181] = {
         Skill("Pound", 35, 40, "Normal"),
         Skill("Double Slap", 10, 15, "Normal"),
@@ -311,31 +368,75 @@ int main(){
         Skill("Flip Turn", 20, 60, "Water"),
         Skill("Surging Strikes", 5, 25, "Water")
     };
-
-    int hp = rand() % 200 + 100;
-    double atk = (rand() % 10) + 5;
-    atk /= 10;
-    int rtype = (rand() % 5 + 1);
-    string type;
-    if (rtype = 1){
-        type = "fire";
-    }else if(rtype = 2){
-        type = "water";
-    }else if(rtype = 3){
-        type = "grass";
-    }else if(rtype = 4){
-        type = "normal";
-    }else if(rtype = 5){
-        type = "rock";
+    string types[5] = {"Fire", "Water", "Grass", "Normal", "Rock"};
+    Pokemon player[6];
+    Pokemon gymleader[6];
+    for(int i=0; i<6; i++){
+        int typeR = rand()%4;
+        int maxhealthR = rand()%200 + 100;
+        float attackR = (rand()% 10 + 5)/10;
+        player[i] = Pokemon(maxhealthR, attackR, types[typeR]);
     }
-    int skill = rand() % 181;
-    int skill2 = rand() % 181;
-    int skill3 = rand() % 181;
-    int skill4 = rand() % 181;
-    Skill skills[4] = {
+    for(int i=0; i<6; i++){
+        int typeR = rand()%4;
+        int maxhealthR = rand()%200 + 100;
+        float attackR = rand()% 1 + 0.5;
+        gymleader[i] = Pokemon(maxhealthR, attackR, types[typeR]);
+    }
+
+    cout << "Welcome to the Pokemon Game" << endl;
+    int p =0;
+    int o=0;
+    while(p!=6 && o!=6){
+        //print pokemon
+        cout <<"\n\nYour send out a Pokemon\n";
+        player[p].printPokemon();
+        if(player[p].getCHealth() == player[p].getHealth()){
+            player[p].setMove();
+            moveR = rand()%112 + 73;
+            while(skills[moveR].getType() != player[p].getType()){
+                moveR = rand()%112 + 73;
+            }
+            player[p].addMove(skills[moveR]);
+            for(int i=1;i<4;i++){
+                moveR = rand()%185;
+                while(skills[moveR].getType() != player[p].getType() && moveR > 73){
+                    moveR = rand()%185;
+                }
+                player[p].addMove(skills[moveR]);
+            }
+        }
+        player[p].printMove();
+
+        //opponet's pokemon
+        cout <<"\n\nYour Opponent sends of a Pokemon\n";
+        gymleader[o].printPokemon();
+        if(gymleader[o].getCHealth() == gymleader[o].getHealth()){
+            gymleader[o].setMove();
+            moveR = rand()%112 + 73;
+            while(skills[moveR].getType() != gymleader[o].getType()){
+                moveR = rand()%112 + 73;
+            }
+            gymleader[o].addMove(skills[moveR]);
+            for(int i=1;i<4;i++){
+                moveR = rand()%185;
+                while(skills[moveR].getType() != gymleader[o].getType() && moveR > 73){
+                    moveR = rand()%185;
+                }
+                gymleader[o].addMove(skills[moveR]);
+            }
+        }
         
-    };
-
-    Pokemon randpoke1(hp, hp, atk, type, );
-
+        //you choose move and execute it
+        int choosemove;
+        int cm = 0;
+        do{
+            cout << "Choose your move(1, 2, 3, 4): ";
+            cin >> choosemove;
+            cout << endl;
+            player[0].printPokemon();
+            cm++;
+        }while(cm = 0);
+        
+    }
 }
