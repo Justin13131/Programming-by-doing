@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 using namespace std;
-
+int who = 0;
 class Skill{
     private:
     string name;
@@ -414,12 +414,38 @@ int main(){
 
         int choosemove;
         int cm = 0;
+        int dmg;
         do{
             cout << endl << "Choose your move(1, 2, 3, 4): ";
             cin >> choosemove;
+            choosemove--;
             cout << endl;
-            player[0].printPokemon();
-            cm++;
+            player[p].chooseMove(choosemove, gymleader[o].getType());
+            player[p].printChooseMove(choosemove);
+            gymleader[o].minusDamage(player[p]);
+            cout << endl << "It's gymleader's turn." << endl;
+            choosemove = rand()%4+1;
+            choosemove--;
+            gymleader[o].chooseMove(choosemove, player[p].getType());
+            gymleader[o].OprintChooseMove(choosemove);
+            player[p].minusDamage(gymleader[o]);
+            if(player[p].getCHealth() <= 0){
+                cm++;
+                p++;
+            }else if(gymleader[o].getCHealth() <= 0){
+                cm++;
+                o++;
+            }
         }while(cm = 0);
+        if(p>6){
+            who++;
+        }if(o>6){
+            who--;
+        }
+    }
+    if(who = 1){
+        cout << endl << "You Lose the Game!";
+    }else if(who = -1){
+        cout << endl << "You Won the Game!";
     }
 }
