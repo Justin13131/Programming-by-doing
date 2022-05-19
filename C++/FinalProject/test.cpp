@@ -134,7 +134,6 @@ class Pokemon{
             damage = moves[x].getDmg();
         }
         moveName = moves[x].getName();
-        
     }
     //Print your move
     void printChooseMove(int x){
