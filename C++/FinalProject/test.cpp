@@ -154,7 +154,7 @@ class Pokemon{
     void minusDamage(Pokemon x){
         chealth = chealth - x.getDamage();
     }
-    //Get the move used
+    //Get move uses
     int getMoveUse(int x){
         return moves[x].getUses();
     }
