@@ -62,19 +62,19 @@ class Pokemon{
         attack = a;
         type = t;
     }
-
+    //Return type
     string getType(){
         return type;
     }
-
+    //Return current health
     int getCHealth(){
         return chealth;
     }
-
+    //return health
     int getHealth(){
         return maxhealth;
     }
-
+    //Print data
     void printPokemon(){
         cout << "Health " << chealth << "/" << maxhealth << "\tType " << type;
     }
@@ -106,7 +106,7 @@ class Pokemon{
     }
 
 
-    void chooseMove(int x, string t){ //choose 1 2 3 4 move and then print out, also calculate damage
+    void chooseMove(int x, string t){ //damage multiplier
         damage =0;
         if(t == "Grass" && moves[x].getType() == "Fire"){
             damage = moves[x].getDmg() * 1.5;
@@ -136,25 +136,25 @@ class Pokemon{
         moveName = moves[x].getName();
         
     }
-
+    //Print your move
     void printChooseMove(int x){
         cout << "You use " << moveName  << ", the opponent takes " << damage << " damage.\n";
         moves[x].useSkill();
     }
-
+    //Pring opponent move
     void OprintChooseMove(int x){
         cout << "Your opponent uses " << moveName  << ", you take " << damage << " damage.\n";
         moves[x].useSkill();
     }
-
+    //Get Damage
     int getDamage(){
         return damage;
     }
-
+    //Do damage
     void minusDamage(Pokemon x){
         chealth = chealth - x.getDamage();
     }
-
+    //Get the move used
     int getMoveUse(int x){
         return moves[x].getUses();
     }
@@ -411,7 +411,7 @@ int main(){
                 gymleader[o].addMove(movelist[moveR]);
             }
         }
-
+        //The game
         int choosemove;
         int cm = 0;
         int dmg;
@@ -420,13 +420,13 @@ int main(){
             cin >> choosemove;
             choosemove--;
             cout << endl;
-            player[p].chooseMove(choosemove, gymleader[o].getType());
+            player[p].chooseMove(choosemove, gymleader[o].getType()); //Player move
             player[p].printChooseMove(choosemove);
             gymleader[o].minusDamage(player[p]);
             cout << endl << "It's gymleader's turn." << endl;
             choosemove = rand()%4+1;
             choosemove--;
-            gymleader[o].chooseMove(choosemove, player[p].getType());
+            gymleader[o].chooseMove(choosemove, player[p].getType());//Gymleader move
             gymleader[o].OprintChooseMove(choosemove);
             player[p].minusDamage(gymleader[o]);
             if(player[p].getCHealth() <= 0){
@@ -443,7 +443,7 @@ int main(){
             who--;
         }
     }
-    if(who = 1){
+    if(who = 1){//Who won
         cout << endl << "You Lose the Game!";
     }else if(who = -1){
         cout << endl << "You Won the Game!";
